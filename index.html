@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>出荷状況ダッシュボード</title>
+<link rel="stylesheet" href="style.css"></head><body><div class="w">
+<h1>🚢 出荷状況ダッシュボード</h1>
+<div class="sub">仕入れ（マレーシア）最新ETD と 営業ステータスレポートを照合 ／ 基準日：<span id="today"></span></div>
+
+<div class="card"><div class="up">
+<div><h2>① 営業ステータスレポート（週2回更新）</h2>
+<input type="file" id="f1" accept=".csv,.tsv,.txt"><textarea id="t1"></textarea>
+<div class="hint">列：booking, cy, qty, etd</div></div>
+<div><h2>② 仕入れ最新スケジュール（マレーシア）</h2>
+<input type="file" id="f2" accept=".csv,.tsv,.txt"><textarea id="t2"></textarea>
+<div class="hint">列：booking, etd, vessel, location, eta（cy, qtyがあれば補完）</div></div>
+</div>
+<div class="bar" style="margin:10px 0 0"><button class="p" id="go">更新して照合</button><button id="smp">サンプルに戻す</button><span class="hint">CSVのファイル選択または貼り付け（Excelからのコピーも可）</span></div></div>
+
+<div class="kpis" id="kpis"></div>
+
+<div class="card">
+<div class="bar"><label>対象月 <input type="month" id="mon"></label>
+<span id="chips"></span></div>
+<div class="tw"><table><thead><tr><th>Booking No.</th><th>CY</th><th>数量</th><th>営業ETD</th><th>仕入れ最新ETD</th><th>差異</th><th>状態</th><th>船の進捗（出荷済のみ）</th></tr></thead><tbody id="tb"></tbody></table></div>
+</div>
+</div>
+<script src="app.js"></script></body></html>

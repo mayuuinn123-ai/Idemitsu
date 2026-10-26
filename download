@@ -1,0 +1,7 @@
+# 実データ（ブッキング番号・数量など）は絶対にGitHubへ上げない
+real-data/
+*.xlsx
+*.xls
+.DS_Store
+.vercel
+node_modules/
